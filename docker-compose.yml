@@ -2,10 +2,6 @@ version: '3'
 services:
   # Your web application => Container
   web:
-    build: .
+    image: darshanrami/rdrep:tagname
     ports:
     - "5000:5000"
-
-  # Redis cache container
-  redis:
-    image: "redis:alpine"
