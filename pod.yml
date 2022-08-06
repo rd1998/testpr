@@ -1,0 +1,14 @@
+# pod.yaml template file that creates pod
+
+apiVersion: v1        # It is of type String
+kind: Pod             # It is of type String
+Namespace: dev-assessment
+metadata:             # It is of type Dictionary
+  name: flaskapp
+  labels:
+    app: flaskapp
+    tier: frontend
+spec:                  # It is of type List and Array
+  containers:
+  - name: flaskapp
+    image: darshanrami/rdrep
