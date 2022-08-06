@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+Namespace: dev-assessment
+metadata:     # Deployment metadata
+  name: flaskapp  # Name of the deployment
+  labels:
+     app: flaskapp  # Declaring the deployments labels.
+spec:
+  replicas: 1  # Declaring the number of Pods required
+  selector:
+    matchLabels:
+      app: flaskapp # Pods will be launched if matches deployment Label.
+  template:
+    metadata:
+      labels:
+        app: flaskapp # Labels of the Pods.
+    spec:
+      containers:
+      - name: flaskapp
+        image: darshanrami/rdrep
+        ports:
+        - containerPort: 3000
