@@ -30,7 +30,7 @@ pipeline{
 			}
 		}
 		
-		stage('login into ansible') {
+		stage('File transfer into ansible server') {
 
 			steps {
 				sh 'scp /var/lib/jenkins/workspace/devassessment/* ubuntu@172.31.45.226:/home/ubuntu/project'
