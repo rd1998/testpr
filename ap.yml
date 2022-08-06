@@ -17,13 +17,13 @@
     - name: copying file with playbook
       become: true
       copy:
-        src: /home/ubuntu/pod.yml
+        src: /home/ubuntu/project/pod.yml
         dest: /tmp/pod.yml
 
     - name: copying file with playbook
       become: true
       copy:
-        src: /home/ubuntu/deployment.yml
+        src: /home/ubuntu/project/deployment.yml
         dest: /tmp/deployment.yml
 
 # Creating a Kubernetes pod in ata-namespace using file stored locally
