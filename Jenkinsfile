@@ -4,6 +4,7 @@ pipeline{
 
 	environment {
 		DOCKERHUB_CREDENTIALS=credentials('DOCKER_HUB_LOGIN')
+		ANSIBLE_CREDENTIALS=credentials('ANSIBLE_SERVER_LOGIN')
 	}
 
 	stages {
@@ -28,11 +29,18 @@ pipeline{
 				sh 'docker push darshanrami/rdrep:latest'
 			}
 		}
+		
+		stage('login into ansible') {
+
+			steps {
+				sh 'scp /var/lib/jenkins/workspace/devassessment/* ubuntu@172.31.45.226:/home/ubuntu/project'
+			}
+		}
 	}
 
 // 	post {
 // 		always {
-// 			sh 'docker logout'
+// 			sh 'docker logout '
 // 		}
 // 	}
 
