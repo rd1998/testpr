@@ -18,13 +18,13 @@
       become: true
       copy:
         src: /home/ubuntu/project/pod.yml
-        dest: /files/pod.yml
+        dest: files/pod.yml
 
     - name: copying file with playbook
       become: true
       copy:
         src: /home/ubuntu/project/deployment.yml
-        dest: /files/deployment.yml
+        dest: files/deployment.yml
 
 # Creating a Kubernetes pod in ata-namespace using file stored locally
 
@@ -32,7 +32,7 @@
       k8s:
         state: present      # State=present when you need to create new object
         namespace: dev-assessment  # defining the namespace
-        src: /files/pod.yml
+        src: files/pod.yml
 
 # Checking the a Kubernetes pods in the ata-namespace
 
@@ -50,4 +50,4 @@
       k8s:
         state: present            # State=present when you need to create new object
         namespace: dev-assessment  # defining the namespace
-        src: /files/deployment.yml  # Source file location
+        src: files/deployment.yml  # Source file location
