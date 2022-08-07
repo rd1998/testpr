@@ -36,6 +36,13 @@ pipeline{
 				sh 'scp /var/lib/jenkins/workspace/devassessment/* ubuntu@172.31.45.226:/home/ubuntu/project'
 			}
 		}
+		stage('Login into ansible server and run playbook') {
+
+			steps {
+				sh 'ssh ubuntu@172.31.45.226'
+				sh 'ansible-playbook /project/ap.yml'
+			}
+		}
 	}
 
 // 	post {
