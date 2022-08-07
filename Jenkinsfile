@@ -40,7 +40,7 @@ pipeline{
 
 			steps {
 				sh 'ssh ubuntu@172.31.45.226'
-				sh 'ansible-playbook /project/ap.yml'
+				sh 'cd project'
 			}
 		}
 	}
