@@ -41,7 +41,7 @@ pipeline{
 			steps {
 				sh """
 				#!/bin/bash
-				ssh ubuntu@ 172.31.45.226 << EOF
+				ssh ubuntu@172.31.45.226 << EOF
 				cd project
 				exit
 				<< EOF
