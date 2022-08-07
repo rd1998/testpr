@@ -1,4 +1,3 @@
----
 apiVersion: apps/v1
 kind: Deployment
 Namespace: dev-assessment
@@ -21,20 +20,4 @@ spec:
         image: darshanrami/rdrep
         ports:
         - containerPort: 3000
----
-
-apiVersion: apps/v1
-kind: Service
-Namespace: dev-assessment
-metadata:
-  name: flaskappservice
-spec:
-  selector:
-    app: flaskapp
-  type: LoadBalancer
-  ports:
-  - protocol: TCP
-    port: 3000
-    targetPort: 3000
-    nodePort: 30000
   
