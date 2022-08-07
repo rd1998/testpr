@@ -43,6 +43,7 @@ pipeline{
 				#!/bin/bash
 				ssh ubuntu@172.31.45.226 << EOF
 				cd project
+				ansible-playbook ap.yml
 				exit
 				<< EOF
 				"""
