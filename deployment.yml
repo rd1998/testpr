@@ -24,7 +24,7 @@ spec:
 ---
 
 apiVersion: apps/v1
-kind: service
+kind: Service
 Namespace: dev-assessment
 metadata:
   name: flaskappservice
