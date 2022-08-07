@@ -39,8 +39,13 @@ pipeline{
 		stage('Login into ansible server and run playbook') {
 
 			steps {
-				sh 'ssh ubuntu@172.31.45.226'
-				sh 'cd project'
+				sh """
+				#!/bin/bash
+				ssh ubuntu@ 172.31.45.226 << EOF
+				cd project
+				exit
+				<< EOF
+				"""
 			}
 		}
 	}
