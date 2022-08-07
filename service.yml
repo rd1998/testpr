@@ -1,0 +1,14 @@
+apiVersion: apps/v1
+kind: service
+Namespace: dev-assessment
+metadata:
+  name: flaskappservice
+spec:
+  selector:
+    app: flaskapp
+  type: LoadBalancer
+  ports:
+  - protocol: TCP
+    port: 3000
+    targetPort: 3000
+    nodePort: 30000
