@@ -5,6 +5,31 @@
 # Defining the remote server where the k8 module will manage the objects
   remote_user: ubuntu   # Using Remote user as ubuntu
   tasks:
+    - name: Remove existing service
+      K8s:
+        state: absent
+        api_version: v1
+        kind: Service
+        namespace: dev-assessment
+        name: flaskappservice
+     
+    - name: Remove existing pod
+      K8s:
+        state: absent
+        api_version: v1
+        kind: Pod
+        namespace: dev-assessment
+        name: flaskapp
+      
+    - name: Remove existing deployment
+      K8s:
+        state: absent
+        api_version: v1
+        kind: Deployment
+        namespace: dev-assessment
+        name: flaskapp
+  
+  
     - name: Create a k8s namespace
       k8s:
         name: dev-assessment # defining the namespace
