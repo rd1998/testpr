@@ -11,7 +11,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t darshanrami/rdrep:latest .'
+				sh 'docker build -t slkrt2211/testrepo:latest .'
 			}
 		}
 
@@ -25,7 +25,7 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push darshanrami/rdrep:latest'
+				sh 'docker push slkrt2211/testrepo:latest'
 			}
 		}
 		
@@ -40,7 +40,7 @@ pipeline{
 			steps {
 				sh """
 				#!/bin/bash
-				ssh ubuntu@172.31.45.226 << EOF
+				ssh ubuntu@172.31.31.160 << EOF
 				cd project
 				ansible-playbook ap.yml
 				exit
