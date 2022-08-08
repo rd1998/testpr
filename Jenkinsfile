@@ -4,7 +4,6 @@ pipeline{
 
 	environment {
 		DOCKERHUB_CREDENTIALS=credentials('DOCKER_HUB_LOGIN')
-		ANSIBLE_CREDENTIALS=credentials('ANSIBLE_SERVER_LOGIN')
 	}
 
 	stages {
