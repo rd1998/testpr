@@ -6,7 +6,7 @@
   remote_user: ubuntu   # Using Remote user as ubuntu
   tasks:
     - name: Remove existing service
-      K8s:
+      k8s:
         state: absent
         api_version: v1
         kind: Service
@@ -14,7 +14,7 @@
         name: flaskappservice
      
     - name: Remove existing pod
-      K8s:
+      k8s:
         state: absent
         api_version: v1
         kind: Pod
@@ -22,7 +22,7 @@
         name: flaskapp
       
     - name: Remove existing deployment
-      K8s:
+      k8s:
         state: absent
         api_version: v1
         kind: Deployment
